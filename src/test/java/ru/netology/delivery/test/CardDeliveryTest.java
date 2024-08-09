@@ -16,20 +16,17 @@ import static com.codeborne.selenide.Selenide.open;
 class CardDeliveryTest {
     private final DataGenerator.UserInfo validUser = DataGenerator.Registration.generateUser("ru");
     private final int daysToAddForFirstMeeting = 4;
-    private final String firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting)
+    private final String firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
 
     @BeforeAll
-    static void setUpAll() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+    static void setUpAll() {SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterAll
-    static void tearDownAll() {
-        SelenideLogger.removeListener("allure");
+    static void tearDownAll() {SelenideLogger.removeListener("allure");
     }
     @BeforeEach
-    void setup() {
-        open("http://localhost:9999");
+    void setup() {open("http://localhost:9999");
     }
 
     @Test
